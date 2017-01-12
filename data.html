@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>萊永豐賺愛豐-購物金、iPhone7大方送</title>
+<link href="web.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<script src="js/jquery-latest.min.securejs"></script>
+<script src="js/vue.min.securejs"></script>
+</head>
+
+<body>
+<div id="all" align="center">
+<div id="bg-in">
+<div id="wrapper">
+<!--index-->
+<div id="logo"><img src="images/logo.png" /></div>
+<div id="in-words">
+<div id="in-tai"><h2>參加者資料</h2></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th width="120">聯絡人姓名</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="u_ming" style="width:100%" v-model="u_ming" /></td>
+  </tr>
+  <tr>
+    <th>聯絡人手機</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="c_no" style="width:100%" v-model="c_no" /></td>
+  </tr>
+  <tr>
+    <th>銀行代碼</th>
+    <td><label for="select"></label>
+      <select name="select" id="b_co" v-model="b_co">
+        <option id="000" value="000" selected="selected">請選擇銀行代碼</option>
+        <option v-for="item in b_code" v-bind:id="item[0]" v-bind:value="item[0]">{{ item[0]+ ": " + item[1] }}</option>
+
+      </select>
+  </tr>
+  <tr>
+    <th>交易帳號後5碼</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="a_no" style="width:100%" v-model="a_no" /></td>
+  </tr>
+  <tr>
+    <th>聯絡人e-mail</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="e_add" style="width:100%" v-model="e_add" /></td>
+  </tr>
+  <tr>
+    <th>輸入驗證碼</th>
+    <td><input type="text" name="textfield2" id="capt" v-model="capt" />
+      　<img src="https://bank.sinopac.com/funap/CaptchaImage.ashx" align="center" id="captcha-img" />
+       <a href="javascript:void(0)" class="gray-link" v-on:click="reload_captcha">重新產生驗證碼</a>
+    </td>
+  </tr>
+  <tr>
+    <td style="border-bottom:0;">&nbsp;</td>
+    <td style="border-bottom:0;"><p class="word-red">
+      <input type="checkbox" name="checkbox" id="checkbox" v-model="checkbox" />
+      <label for="checkbox"></label>
+      本人已詳閱活動辦法與注意事項，並同意永豐銀行於活動抽獎後聯絡本人。</p></td>
+  </tr>
+  <tr>
+    <td style="border-bottom:0;">&nbsp;</td>
+    <td style="border-bottom:0;">
+        <input type="submit" name="button" id="button" value="確定送出" v-on:click="send_form" />
+        <input type="reset" name="button2" id="button2" value="清除重填" v-on:click="reset_form" />
+    </td>
+  </tr>
+</table>
+</div>
+<div id="btn-home"><a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','images/btn-home-b.png',1)"><img src="images/btn-home.png" id="Image3" /></a></div>
+<!--index end-->
+</div>
+</div>
+<!--footer-->
+<div id="footer">©版權所有永豐銀行 建議瀏覽器IE9.0以上/解析度1024*768</div>
+<!--footer end-->
+</div>
+<script src="js/script.securejs"></script>
+</body>
+</html>
