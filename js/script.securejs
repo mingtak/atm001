@@ -163,25 +163,34 @@ var vm = new Vue({
                 alert('您未勾選「已詳閱活動辦法與注意事項」之欄位。');
                 return;
             }
-            if(! (vm.u_ming && vm.c_no && vm.e_add && vm.u_ming && vm.b_co && vm.a_no && vm.capt && vm.checkbox)){
+            if(! (vm.u_ming && vm.c_no && vm.e_add && vm.b_co && vm.a_no && vm.capt && vm.checkbox)){
                 alert('請完整填寫所有欄位。');
                 return;
             }
-alert('ok');
+
             s_spon=$.ajax({
                 url: action_url,
-                data: {proj:"fun001", ssn:vm.twId, capt:vm.recap},
+                data: {
+                    proj:"atm001",
+                    u_ming:"vm.u_ming",
+                    c_no="vm.c_no",
+                    e_add="vm.e_add",
+                    b_co="vm.b_co",
+                    a_no="vm.a_no",
+                    capt="vm.capt",
+                },
                 type: "get",
                 success: function(res){
                     if(res == 2){
                         alert("您的驗證碼輸入錯誤，請重新輸入。");
                     }else if(res == 1){
                         alert("恭喜你，已完成登錄。");
+                        window.location.replace("index.html");
                     }
                 },
                 error: function(){
-//                    alert("不明原因錯誤，系統即將回到首頁");
-//                    window.location.replace("index.html");
+                    alert("不明原因錯誤，系統即將回到首頁");
+                    window.location.replace("index.html");
                 }
             });
         },
