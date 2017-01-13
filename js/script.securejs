@@ -1,3 +1,4 @@
+var proj_no = "atm001";
 var action_url = "test.html";
 // var action_url = "http://104.155.222.63/sinopac_atm001/test.html";
 var capt_url = "https://bank.sinopac.com/funap/CaptchaImage.ashx";
@@ -171,13 +172,13 @@ var vm = new Vue({
             s_spon=$.ajax({
                 url: action_url,
                 data: {
-                    proj:"atm001",
-                    u_ming:"vm.u_ming",
-                    c_no="vm.c_no",
-                    e_add="vm.e_add",
-                    b_co="vm.b_co",
-                    a_no="vm.a_no",
-                    capt="vm.capt",
+                    proj:proj_no,
+                    u_ming:vm.u_ming,
+                    c_no:vm.c_no,
+                    e_add:vm.e_add,
+                    b_co:vm.b_co,
+                    a_no:vm.a_no,
+                    capt:vm.capt,
                 },
                 type: "get",
                 success: function(res){
